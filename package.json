@@ -1,0 +1,19 @@
+{
+  "name": "task-slayer",
+  "version": "1.0.0",
+  "description": "Task Slayer — Productivity dApp (ERC20 + ERC721 + TaskManager)",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy:mumbai": "npx hardhat run --network mumbai scripts/deployTaskSlayer.js"
+  },
+  "devDependencies": {
+    "hardhat": "^2.15.0",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0"
+  },
+  "dependencies": {
+    "ethers": "^6.6.0",
+    "@openzeppelin/contracts": "^4.9.0",
+    "dotenv": "^16.0.0"
+  }
+}
