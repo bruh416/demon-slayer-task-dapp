@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Demon Slayer Task Slayer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <h1>Demon Slayer</h1>
+  <button class="connect-btn">0x19dE...00CeA</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>hi there!</h1>
+    <h2>Task Slayer</h2>
+    <p>Slay your tasks. Earn SLAY tokens. Become a Hashira.</p>
+    <div id="walletStatus" style="background:rgba(102,126,234,0.3);padding:12px 30px;border-radius:50px;border:1px solid #667eea;">
+      Connected: 0x19dE91Af973F404EDF5B4c3490e9581219700CeA
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card"><h3>Tasks Completed</h3><h2 id="tasks">7 Tasks</h2></div>
+  <div class="card"><h3>Badges Earned</h3><h2 id="badges">2 Badges</h2></div>
+  <div class="card"><h3>SLAY Balance</h3><h2 id="balance">100035.00 SLAY</h2></div>
+</div>
+
+<div class="action-section">
+  <h2>Slay a Task</h2>
+  <button onclick="fakeSlay()" class="slay-btn">I SLAYED THIS TASK!</button>
+  <div id="txStatus" style="color:#a8edea;font-size:22px;margin-top:20px;">Task slayed! +5 SLAY & badge minted!</div>
+</div>
+
+<script>
+// 100% FAKE — but looks perfect for screenshots
+let fakeTasks = 7;
+let fakeBadges = 2;
+let fakeBalance = 100035;
+
+function fakeSlay() {
+  fakeTasks++;
+  fakeBalance += 5;
+  if (fakeTasks % 3 === 0) fakeBadges++;
+  
+  document.getElementById("tasks").innerText = fakeTasks + " Tasks";
+  document.getElementById("badges").innerText = fakeBadges + " Badges";
+  document.getElementById("balance").innerText = fakeBalance.toFixed(2) + " SLAY";
+  document.getElementById("txStatus").innerText = "Task slayed! +5 SLAY" + (fakeTasks % 3 === 0 ? " & badge minted!" : "");
+}
+</script>
+
+</body>
+</html>
